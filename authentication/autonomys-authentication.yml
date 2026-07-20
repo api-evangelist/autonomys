@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/autonomys-auto-drive-openapi.json
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: 'Bearer token for authentication. Example: Bearer <token>. Could be either an
+    API key or a JWT token.'
+  sources:
+  - openapi/autonomys-auto-drive-openapi.json
+- name: provider
+  type: apiKey
+  in: header
+  parameter: X-Auth-Provider
+  description: 'Used for differentiating between different auth providers. For most use cases:
+    X-Auth-Provider: apikey'
+  sources:
+  - openapi/autonomys-auto-drive-openapi.json
