@@ -1,0 +1,154 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/autonomys-auto-drive-openapi.json
+format: http-status
+note: Auto Drive returns plain HTTP status codes with a description string; responses
+  are not RFC 9457 application/problem+json.
+problems:
+- status: 400
+  title: Invalid input
+  operations:
+  - POST /uploads/file
+  - POST /uploads/folder
+  - POST /uploads/folder/{folderUploadId}/file
+  - POST /uploads/file/{uploadId}/chunk
+- status: 400
+  title: Missing `publicId` in request body
+  operations:
+  - POST /objects/{cid}/share
+- status: 400
+  title: Missing or invalid cid value
+  operations:
+  - GET /objects/search
+- status: 400
+  title: Missing or invalid txHash
+  operations:
+  - POST /intents/{id}/watch
+- status: 401
+  title: Unauthorized
+  operations:
+  - GET /accounts/@me
+  - GET /objects/roots
+  - GET /objects/roots/shared
+  - GET /objects/roots/deleted
+  - POST /objects/{cid}/share
+  - POST /objects/{cid}/delete
+  - POST /objects/{cid}/restore
+  - POST /objects/{cid}/publish
+  - POST /objects/{cid}/unpublish
+  - GET /intents/{id}
+  - POST /intents/{id}/watch
+- status: 401
+  title: Unauthorized — missing or invalid credentials
+  operations:
+  - POST /intents
+- status: 403
+  title: Forbidden — the intent belongs to a different user
+  operations:
+  - GET /intents/{id}
+  - POST /intents/{id}/watch
+- status: 403
+  title: Google-verified account required — the authenticated account was not registered
+    via Google OAuth
+  operations:
+  - POST /intents
+- status: 404
+  title: Feature not available — the buyCredits feature flag is not active for this
+    user
+  operations:
+  - POST /intents
+- status: 404
+  title: Intent not found
+  operations:
+  - GET /intents/{id}
+- status: 404
+  title: Metadata not found
+  operations:
+  - GET /objects/{cid}/summary
+  - GET /objects/{cid}/metadata
+  - GET /objects/{cid}/download
+  - GET /downloads/{cid}
+- status: 404
+  title: Published object not found
+  operations:
+  - GET /objects/{id}/public
+- status: 410
+  title: Intent has expired
+  operations:
+  - POST /intents/{id}/watch
+- status: 410
+  title: Intent has expired (price-lock window elapsed)
+  operations:
+  - GET /intents/{id}
+- status: 500
+  title: Failed to complete upload
+  operations:
+  - POST /uploads/{uploadId}/complete
+- status: 500
+  title: Failed to create file in folder
+  operations:
+  - POST /uploads/folder/{folderUploadId}/file
+- status: 500
+  title: Failed to create upload
+  operations:
+  - POST /uploads/file
+  - POST /uploads/folder
+- status: 500
+  title: Failed to delete object
+  operations:
+  - POST /objects/{cid}/delete
+- status: 500
+  title: Failed to get user info
+  operations:
+  - GET /accounts/@me
+- status: 500
+  title: Failed to publish object
+  operations:
+  - POST /objects/{cid}/publish
+- status: 500
+  title: Failed to restore object
+  operations:
+  - POST /objects/{cid}/restore
+- status: 500
+  title: Failed to retrieve data
+  operations:
+  - GET /objects/{cid}/download
+  - GET /objects/{id}/public
+  - GET /downloads/{cid}
+- status: 500
+  title: Failed to retrieve deleted root objects
+  operations:
+  - GET /objects/roots/deleted
+- status: 500
+  title: Failed to retrieve metadata
+  operations:
+  - GET /objects/{cid}/summary
+  - GET /objects/{cid}/metadata
+- status: 500
+  title: Failed to retrieve root objects
+  operations:
+  - GET /objects/roots
+- status: 500
+  title: Failed to retrieve shared root objects
+  operations:
+  - GET /objects/roots/shared
+- status: 500
+  title: Failed to retrieve upload status
+  operations:
+  - GET /objects/{cid}/status
+- status: 500
+  title: Failed to search metadata
+  operations:
+  - GET /objects/search
+- status: 500
+  title: Failed to share object
+  operations:
+  - POST /objects/{cid}/share
+- status: 500
+  title: Failed to unpublish object
+  operations:
+  - POST /objects/{cid}/unpublish
+- status: 500
+  title: Failed to upload chunk
+  operations:
+  - POST /uploads/file/{uploadId}/chunk

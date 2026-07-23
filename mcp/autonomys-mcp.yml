@@ -1,0 +1,166 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/autonomys-auto-drive-openapi.json
+note: No official Autonomys MCP server found as of this pass. Candidate tool list
+  derived one-per-operation from the Auto Drive OpenAPI; not an endorsed server.
+server:
+  name: autonomys-auto-drive
+  transport: http
+  base_url: https://mainnet.auto-drive.autonomys.xyz
+tools:
+- name: get_accounts_me
+  description: Accounts - Get current user account information
+  method: GET
+  path: /accounts/@me
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /accounts/@me
+- name: post_uploads_file
+  description: Uploads - Upload a file
+  method: POST
+  path: /uploads/file
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /uploads/file
+- name: post_uploads_folder
+  description: Uploads - Create a new folder upload
+  method: POST
+  path: /uploads/folder
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /uploads/folder
+- name: post_uploads_folder_by_folderuploadid_file
+  description: Uploads - Create a file in a folder provided by the folder upload id
+  method: POST
+  path: /uploads/folder/{folderUploadId}/file
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /uploads/folder/{folderUploadId}/file
+- name: post_uploads_file_by_uploadid_chunk
+  description: Uploads - Upload a chunk of a file
+  method: POST
+  path: /uploads/file/{uploadId}/chunk
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /uploads/file/{uploadId}/chunk
+- name: post_uploads_by_uploadid_complete
+  description: Uploads - Complete the upload returning the file or folder CID
+  method: POST
+  path: /uploads/{uploadId}/complete
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /uploads/{uploadId}/complete
+- name: get_objects_roots
+  description: Objects - Get root objects
+  method: GET
+  path: /objects/roots
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/roots
+- name: get_objects_roots_shared
+  description: Objects - Get shared root objects
+  method: GET
+  path: /objects/roots/shared
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/roots/shared
+- name: get_objects_roots_deleted
+  description: Objects - Get deleted root objects
+  method: GET
+  path: /objects/roots/deleted
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/roots/deleted
+- name: get_objects_search
+  description: Objects - Search for objects by CID or name
+  method: GET
+  path: /objects/search
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/search
+- name: get_objects_by_cid_summary
+  description: Objects - Get summary of an object by CID
+  method: GET
+  path: /objects/{cid}/summary
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/{cid}/summary
+- name: get_objects_by_cid_metadata
+  description: Objects - Get metadata of an object by CID
+  method: GET
+  path: /objects/{cid}/metadata
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/{cid}/metadata
+- name: get_objects_by_cid_status
+  description: Objects - Get upload status of an object by CID
+  method: GET
+  path: /objects/{cid}/status
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/{cid}/status
+- name: post_objects_by_cid_share
+  description: Objects - Share an object by CID
+  method: POST
+  path: /objects/{cid}/share
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /objects/{cid}/share
+- name: get_objects_by_cid_download
+  description: Objects - Download an object by CID
+  method: GET
+  path: /objects/{cid}/download
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/{cid}/download
+- name: post_objects_by_cid_delete
+  description: Objects - Delete an object by CID
+  method: POST
+  path: /objects/{cid}/delete
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /objects/{cid}/delete
+- name: post_objects_by_cid_restore
+  description: Objects - Restore a deleted object by CID
+  method: POST
+  path: /objects/{cid}/restore
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /objects/{cid}/restore
+- name: post_objects_by_cid_publish
+  description: Objects - Publish an object by CID and return the object id
+  method: POST
+  path: /objects/{cid}/publish
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /objects/{cid}/publish
+- name: post_objects_by_cid_unpublish
+  description: Objects - Unpublish an object by CID
+  method: POST
+  path: /objects/{cid}/unpublish
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /objects/{cid}/unpublish
+- name: get_objects_by_id_public
+  description: Objects - Download a published object by id
+  method: GET
+  path: /objects/{id}/public
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /objects/{id}/public
+- name: post_downloads_async_by_cid
+  description: Downloads - Create async download for an object by CID
+  method: POST
+  path: /downloads/async/{cid}
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /downloads/async/{cid}
+- name: post_downloads_async_by_downloadid_dismiss
+  description: Downloads - Dismiss an async download
+  method: POST
+  path: /downloads/async/{downloadId}/dismiss
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /downloads/async/{downloadId}/dismiss
+- name: get_downloads_by_cid
+  description: Downloads - Download an object by CID
+  method: GET
+  path: /downloads/{cid}
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /downloads/{cid}
+- name: get_downloads_async_by_downloadid
+  description: Downloads - Get async download status
+  method: GET
+  path: /downloads/async/{downloadId}
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /downloads/async/{downloadId}
+- name: get_downloads_async_by_downloadid_status
+  description: Downloads - Get async download status
+  method: GET
+  path: /downloads/async/{downloadId}/status
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /downloads/async/{downloadId}/status
+- name: get_downloads_async_me
+  description: Downloads - Get all async downloads for the current user
+  method: GET
+  path: /downloads/async/@me
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /downloads/async/@me
+- name: get_intents_price
+  description: Intents - Get current storage price
+  method: GET
+  path: /intents/price
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /intents/price
+- name: get_intents_contract
+  description: Intents - Get smart contract info
+  method: GET
+  path: /intents/contract
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /intents/contract
+- name: post_intents
+  description: Intents - Create a purchase intent
+  method: POST
+  path: /intents
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /intents
+- name: get_intents_by_id
+  description: Intents - Get intent status
+  method: GET
+  path: /intents/{id}
+  source_operation: openapi/autonomys-auto-drive-openapi.json#GET /intents/{id}
+- name: post_intents_by_id_watch
+  description: Intents - Submit transaction hash for watching
+  method: POST
+  path: /intents/{id}/watch
+  source_operation: openapi/autonomys-auto-drive-openapi.json#POST /intents/{id}/watch

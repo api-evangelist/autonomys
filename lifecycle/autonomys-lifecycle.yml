@@ -1,0 +1,21 @@
+generated: '2026-07-18'
+method: searched
+source: https://develop.autonomys.xyz/sdk/auto-drive/api_reference
+versioning:
+  scheme: spec-version
+  current: 1.1.0
+  note: Auto Drive OpenAPI declares info.version 1.1.0; the API is not URI-path versioned.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation or Sunset (RFC 8594) policy found.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://telemetry.subspace.foundation
+status_page_note: >-
+  Autonomys publishes a live network telemetry dashboard (node counts, best
+  block, sync health). No dedicated Auto Drive API status page was found.
+explorers:
+  - https://autonomys.subscan.io
+deprecated_operations: []

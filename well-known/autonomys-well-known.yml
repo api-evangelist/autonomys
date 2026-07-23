@@ -1,0 +1,21 @@
+generated: '2026-07-18'
+method: searched
+note: >-
+  Probed the Auto Drive API host and the corporate site on 2026-07-18. No
+  /.well-known/ discovery documents are published (all 404). Absence recorded
+  as valid data; no raw files saved and no WellKnown/SecurityTxt pointer wired.
+hosts:
+  - host: https://mainnet.auto-drive.autonomys.xyz
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+  - host: https://www.autonomys.xyz
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}

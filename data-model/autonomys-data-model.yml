@@ -1,0 +1,152 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/autonomys-auto-drive-openapi.json
+entities:
+- name: FolderTreeFolder
+  fields:
+  - name
+  - type
+  - children
+- name: FolderTreeFile
+  fields:
+  - name
+  - type
+  - id
+- name: FolderTree
+  fields: []
+- name: ObjectSummary
+  fields:
+  - headCid
+  - name
+  - size
+  - owners
+  - uploadStatus
+  - createdAt
+  - type
+  - mimeType
+  - children
+- name: ObjectSearchResult
+  fields:
+  - cid
+  - name
+- name: OffchainMetadata
+  fields: []
+- name: OffchainFileMetadata
+  fields:
+  - type
+  - dataCid
+  - name
+  - mimeType
+  - totalSize
+  - totalChunks
+  - chunks
+  - uploadOptions
+- name: ChunkInfo
+  fields:
+  - size
+  - cid
+- name: OffchainFolderMetadata
+  fields:
+  - type
+  - dataCid
+  - name
+  - totalSize
+  - totalFiles
+  - children
+  - uploadOptions
+- name: ChildrenMetadata
+  fields:
+  - type
+  - cid
+  - name
+  - totalSize
+- name: UploadStatus
+  fields:
+  - uploadedNodes
+  - totalNodes
+  - archivedNodes
+  - minimumBlockDepth
+  - maximumBlockDepth
+- name: UploadOptions
+  fields:
+  - compression
+  - encryption
+- name: CompressionOptions
+  fields:
+  - algorithm
+  - level
+- name: EncryptionOptions
+  fields:
+  - algorithm
+  - chunkSize
+- name: AccountInfo
+  fields:
+  - id
+  - organizationId
+  - uploadLimit
+  - downloadLimit
+  - module
+  - pendingUploadCredits
+  - pendingDownloadCredits
+- name: AsyncDownload
+  fields:
+  - id
+  - oauthProvider
+  - oauthUserId
+  - cid
+  - status
+  - errorMessage
+  - fileSize
+  - downloadedBytes
+  - createdAt
+  - updatedAt
+- name: AsyncDownloadStatus
+  fields:
+  - status
+- name: ContractInfo
+  fields:
+  - chainId
+  - contractAddress
+  - payIntentAbi
+- name: Intent
+  fields:
+  - id
+  - userPublicId
+  - status
+  - txHash
+  - paymentAmount
+  - shannonsPerByte
+  - expiresAt
+relationships:
+- from: FolderTreeFolder
+  to: FolderTree
+  cardinality: has_one
+  via: children
+- from: ObjectSummary
+  to: UploadStatus
+  cardinality: has_one
+  via: uploadStatus
+- from: OffchainFileMetadata
+  to: ChunkInfo
+  cardinality: has_many
+  via: chunks
+- from: OffchainFileMetadata
+  to: UploadOptions
+  cardinality: has_one
+  via: uploadOptions
+- from: OffchainFolderMetadata
+  to: ChildrenMetadata
+  cardinality: has_many
+  via: children
+- from: OffchainFolderMetadata
+  to: UploadOptions
+  cardinality: has_one
+  via: uploadOptions
+- from: UploadOptions
+  to: CompressionOptions
+  cardinality: has_one
+  via: compression
+- from: UploadOptions
+  to: EncryptionOptions
+  cardinality: has_one
+  via: encryption

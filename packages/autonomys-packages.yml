@@ -1,0 +1,57 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.npmjs.com/org/autonomys
+note: >-
+  Auto SDK is a TypeScript monorepo (github.com/autonomys/auto-sdk) published as
+  scoped @autonomys/* packages on npm. Versions verified live against the npm
+  registry on 2026-07-18. No first-party client libraries were found on PyPI,
+  crates.io, Go modules, RubyGems, NuGet, Maven Central, or Packagist.
+packages:
+  - language: javascript
+    registry: npm
+    name: '@autonomys/auto-drive'
+    version: 1.6.14
+    url: https://www.npmjs.com/package/@autonomys/auto-drive
+    install: npm install @autonomys/auto-drive
+    repository: https://github.com/autonomys/auto-sdk
+    official: true
+  - language: javascript
+    registry: npm
+    name: '@autonomys/auto-consensus'
+    version: 1.6.14
+    url: https://www.npmjs.com/package/@autonomys/auto-consensus
+    install: npm install @autonomys/auto-consensus
+    repository: https://github.com/autonomys/auto-sdk
+    official: true
+  - language: javascript
+    registry: npm
+    name: '@autonomys/auto-utils'
+    version: 1.6.14
+    url: https://www.npmjs.com/package/@autonomys/auto-utils
+    install: npm install @autonomys/auto-utils
+    repository: https://github.com/autonomys/auto-sdk
+    official: true
+  - language: javascript
+    registry: npm
+    name: '@autonomys/auto-xdm'
+    version: 1.6.14
+    url: https://www.npmjs.com/package/@autonomys/auto-xdm
+    install: npm install @autonomys/auto-xdm
+    repository: https://github.com/autonomys/auto-sdk
+    official: true
+  - language: javascript
+    registry: npm
+    name: '@autonomys/auto-dag-data'
+    version: 1.6.14
+    url: https://www.npmjs.com/package/@autonomys/auto-dag-data
+    install: npm install @autonomys/auto-dag-data
+    repository: https://github.com/autonomys/auto-sdk
+    official: true
+  - language: javascript
+    registry: npm
+    name: '@autonomys/auto-id'
+    version: 1.2.4
+    url: https://www.npmjs.com/package/@autonomys/auto-id
+    install: npm install @autonomys/auto-id
+    repository: https://github.com/autonomys/auto-sdk
+    official: true

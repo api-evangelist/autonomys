@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/autonomys-auto-drive-openapi.json
+note: >-
+  Packaged Agent Skills for marquee Auto Drive flows. The Auto Drive OpenAPI
+  declares no operationIds, so steps are grounded in verified METHOD + path
+  operations from the spec.
+skills:
+  - file: autonomys-upload-and-retrieve.md
+    name: Upload a file to Auto Drive and retrieve it by CID
+    api: openapi/autonomys-auto-drive-openapi.json
+    operations:
+      - POST /uploads/file
+      - POST /uploads/{uploadId}/complete
+      - GET /objects/{cid}/status
+      - GET /objects/{cid}/download
+  - file: autonomys-purchase-storage-credits.md
+    name: Purchase Auto Drive storage credits with AI3
+    api: openapi/autonomys-auto-drive-openapi.json
+    operations:
+      - GET /intents/contract
+      - GET /intents/price
+      - POST /intents
+      - POST /intents/{id}/watch

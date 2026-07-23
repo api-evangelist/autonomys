@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/autonomys-auto-drive-openapi.json
+note: >-
+  Cross-cutting standards conformance derived from the Auto Drive OpenAPI 3.0.0
+  and the published auth docs. No published SOC 2 / ISO 27001 / PCI compliance
+  program was found, so no Compliance pointer is emitted.
+standards:
+  - id: openapi-3.0
+    conforms: true
+    evidence: Auto Drive publishes an OpenAPI 3.0.0 description at /api/docs/raw
+  - id: oauth2
+    conforms: false
+    evidence: API uses static bearer API keys, not OAuth2 authorization flows
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: error responses are plain HTTP status codes with a description string, not application/problem+json
+  - id: api-key-bearer-auth
+    conforms: true
+    evidence: securitySchemes apiKey (Authorization Bearer) + provider (X-Auth-Provider) headers
+  - id: content-addressing-ipfs-cid
+    conforms: true
+    evidence: objects are addressed by IPFS-style CIDs throughout the Objects and Downloads APIs

@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Autonomys Auto Drive
+  version: 1.0.0
+extends: openapi/autonomys-auto-drive-openapi.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-18'
+      x-apievangelist-source: https://mainnet.auto-drive.autonomys.xyz/api/docs/raw
+  - target: $
+    update:
+      servers:
+        - url: https://mainnet.auto-drive.autonomys.xyz
+          description: Auto Drive mainnet API (production)
+  - target: $.info
+    update:
+      x-product: Auto Drive
+      x-network: Autonomys
+      x-content-addressing: ipfs-cid
+      x-dashboard: https://ai3.storage

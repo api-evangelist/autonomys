@@ -1,0 +1,38 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/autonomys-auto-drive-openapi.json
+docs: https://develop.autonomys.xyz/sdk/auto-drive/api_reference
+note: >-
+  Cross-cutting request/response semantics for the Auto Drive API, derived from
+  the OpenAPI and the published auth docs.
+authentication:
+  style: api-key-bearer
+  headers:
+    - {name: Authorization, value: 'Bearer <api-key-or-jwt>'}
+    - {name: X-Auth-Provider, value: apikey}
+  dashboard: https://ai3.storage
+  ref: authentication/autonomys-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    No Idempotency-Key header is documented. The Intents purchase flow is
+    naturally idempotent per intentId (POST /intents returns an intentId with a
+    locked price; the on-chain payIntent + POST /intents/{id}/watch are keyed to
+    that id), but this is a domain flow, not a generic idempotency contract.
+pagination:
+  style: offset-limit
+  params: [limit, offset, scope]
+  applies_to: [GET /objects/roots, GET /objects/roots/shared, GET /objects/roots/deleted, GET /objects/search]
+content_addressing:
+  scheme: ipfs-cid
+  note: Objects are identified by CID across the Objects and Downloads APIs.
+error_envelope:
+  shape: http-status-with-description
+  problem_json: false
+  ref: errors/autonomys-problem-types.yml
+rate_limits:
+  note: >-
+    Default free-tier quotas are documented as 100 MB monthly uploads and 5 GB
+    monthly downloads; per-subscription credits are readable via GET
+    /subscriptions/credits and GET /accounts/@me.
+lifecycle_ref: lifecycle/autonomys-lifecycle.yml

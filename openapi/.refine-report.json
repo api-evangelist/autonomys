@@ -1,0 +1,16 @@
+{
+  "provider": "autonomys",
+  "sources": [
+    "autonomys-auto-drive-api-api-openapi.yml",
+    "autonomys-auto-drive-download-gateway-api-openapi.yml"
+  ],
+  "outputs": [
+    "autonomys-auto-drive-api-api-openapi.yml",
+    "autonomys-auto-drive-download-gateway-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
