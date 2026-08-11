@@ -82,8 +82,10 @@ apis:
   - type: InteractiveDocs
     url: https://mainnet.auto-drive.autonomys.xyz/api/docs
 common:
+- type: MCPServer
+  url: mcp/autonomys-mcp.yml
 - type: OpenAPI
-  url: openapi/autonomys-auto-drive-openapi.json
+  url: openapi/_original/autonomys-auto-drive-openapi.json
 - type: Overlay
   url: overlays/autonomys-auto-drive-overlay.yaml
 - type: Authentication
