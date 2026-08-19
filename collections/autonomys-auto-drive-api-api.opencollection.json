@@ -1,0 +1,504 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Auto Drive APIs Auto Drive API API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auto Drive API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Accounts - Get current user account information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounts/@me"
+          },
+          "docs": "Accounts - Get current user account information"
+        },
+        {
+          "info": {
+            "name": "Uploads - Upload a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/uploads/file",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Uploads - Upload a file"
+        },
+        {
+          "info": {
+            "name": "Uploads - Create a new folder upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/uploads/folder",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Uploads - Create a new folder upload"
+        },
+        {
+          "info": {
+            "name": "Uploads - Create a file in a folder provided by the folder upload id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/uploads/folder/:folderUploadId/file",
+            "params": [
+              {
+                "name": "folderUploadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Uploads - Create a file in a folder provided by the folder upload id"
+        },
+        {
+          "info": {
+            "name": "Uploads - Upload a chunk of a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/uploads/file/:uploadId/chunk",
+            "params": [
+              {
+                "name": "uploadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "index",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Uploads - Upload a chunk of a file"
+        },
+        {
+          "info": {
+            "name": "Uploads - Complete the upload returning the file or folder CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/uploads/:uploadId/complete",
+            "params": [
+              {
+                "name": "uploadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Uploads - Complete the upload returning the file or folder CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Get root objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/roots",
+            "params": [
+              {
+                "name": "scope",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Objects - Get root objects"
+        },
+        {
+          "info": {
+            "name": "Objects - Get shared root objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/roots/shared",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Objects - Get shared root objects"
+        },
+        {
+          "info": {
+            "name": "Objects - Get deleted root objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/roots/deleted",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Objects - Get deleted root objects"
+        },
+        {
+          "info": {
+            "name": "Objects - Search for objects by CID or name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/search",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "query",
+                "description": "The CID or name of the object to search for"
+              },
+              {
+                "name": "scope",
+                "value": "",
+                "type": "query",
+                "description": "The scope of the search"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return"
+              }
+            ]
+          },
+          "docs": "Objects - Search for objects by CID or name"
+        },
+        {
+          "info": {
+            "name": "Objects - Get summary of an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/:cid/summary",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Get summary of an object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Get metadata of an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/:cid/metadata",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Get metadata of an object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Get upload status of an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/:cid/status",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Get upload status of an object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Share an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/objects/:cid/share",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Objects - Share an object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Download an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/:cid/download",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Download an object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Delete an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/objects/:cid/delete",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Delete an object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Restore a deleted object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/objects/:cid/restore",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Restore a deleted object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Publish an object by CID and return the object id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/objects/:cid/publish",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Publish an object by CID and return the object id"
+        },
+        {
+          "info": {
+            "name": "Objects - Unpublish an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/objects/:cid/unpublish",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Unpublish an object by CID"
+        },
+        {
+          "info": {
+            "name": "Objects - Download a published object by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/objects/:id/public",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Objects - Download a published object by id"
+        },
+        {
+          "info": {
+            "name": "Intents - Get current storage price",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/intents/price"
+          },
+          "docs": "Returns the current price per byte (in shannons) and price per GB (in AI3). This endpoint does not require authentication."
+        },
+        {
+          "info": {
+            "name": "Intents - Get smart contract info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/intents/contract"
+          },
+          "docs": "Returns the on-chain contract address, EVM chain ID, and the minimal ABI needed to call `payIntent`. This endpoint does not require authentication. Use this to build the on-chain transaction for step 4 of the integration flow."
+        },
+        {
+          "info": {
+            "name": "Intents - Create a purchase intent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/intents"
+          },
+          "docs": "Creates a PENDING intent with the current price locked in. The intent has a time-limited price-lock window (default 10 minutes) during which the price is guaranteed.\n\n**Authentication:** Currently requires a Google-verified account. You can authenticate via:\n- Google OAuth session\n- API key from a Google-registered account (set `X-Auth-Provider: apikey`)\n\n**Third-party integration pattern:**\n1. Create an Auto Drive account via Google OAuth at https://ai3.storage\n2. Generate an API key from the d"
+        },
+        {
+          "info": {
+            "name": "Intents - Get intent status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/intents/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The intent ID returned by POST /intents"
+              }
+            ]
+          },
+          "docs": "Returns the current status of a purchase intent. Use this to poll for completion after calling `/intents/:id/watch`."
+        },
+        {
+          "info": {
+            "name": "Intents - Submit transaction hash for watching",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/intents/:id/watch",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The intent ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Attaches a transaction hash to a pending intent and queues on-chain confirmation watching. Call this after the user has submitted the `payIntent` transaction on-chain."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

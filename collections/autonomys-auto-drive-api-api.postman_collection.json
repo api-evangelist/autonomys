@@ -1,0 +1,5458 @@
+{
+  "item": [
+    {
+      "id": "8a970a22-0b8a-4eb6-b0de-8266cdbbab44",
+      "name": "Auto Drive API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f2c7b579-ad47-4205-87de-f52c5164623b",
+          "name": "Accounts - Get current user account information",
+          "request": {
+            "name": "Accounts - Get current user account information",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "accounts",
+                "@me"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cf409a0-fc24-47d5-afbf-a82f44775964",
+              "name": "Successfully retrieved account information",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "accounts",
+                    "@me"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account\": {\n    \"id\": \"string\",\n    \"organizationId\": \"string\",\n    \"uploadLimit\": 5786.888040695429,\n    \"downloadLimit\": 9953.727794331246,\n    \"pendingUploadCredits\": 3362.709885941361,\n    \"pendingDownloadCredits\": 2621.1406068548913,\n    \"module\": \"one_off\"\n  },\n  \"id\": 3355.567500829952,\n  \"organizationId\": true,\n  \"uploadLimit\": false,\n  \"downloadLimit\": \"string\",\n  \"model\": \"string\",\n  \"pendingUploadCredits\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "468e9460-5e6d-4ea1-ae9d-80a39af3a3ce",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "accounts",
+                    "@me"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64ef5fef-e448-44a2-bacb-2957c66d4ca2",
+              "name": "Failed to get user info",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "accounts",
+                    "@me"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e8ece39-0f68-4b3a-b61b-ff86c5b048a4",
+          "name": "Uploads - Upload a file",
+          "request": {
+            "name": "Uploads - Upload a file",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "uploads",
+                "file"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filename\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b81c449b-c367-419c-ba72-83424d121d7e",
+              "name": "File uploaded successfully",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "file"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filename\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7854721-3da5-4f09-93ed-4aaa181b0c59",
+              "name": "Invalid input",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "file"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filename\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3293fcef-58c6-462c-a40e-d92887de3e1a",
+              "name": "Failed to create upload",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "file"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filename\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "639e1c95-37dc-4bca-9043-d112f4f8c1a8",
+          "name": "Uploads - Create a new folder upload",
+          "request": {
+            "name": "Uploads - Create a new folder upload",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "uploads",
+                "folder"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fileTree\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"children\": {\n      \"value\": \"<Circular reference to #/components/schemas/FolderTree detected>\"\n    }\n  },\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "53956ef3-5a82-415b-8a95-1e9c93db80ea",
+              "name": "Folder created successfully",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "folder"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileTree\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"children\": {\n      \"value\": \"<Circular reference to #/components/schemas/FolderTree detected>\"\n    }\n  },\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2b9357b-2701-4ef7-946d-7b6dd7a0af3e",
+              "name": "Invalid input",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "folder"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileTree\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"children\": {\n      \"value\": \"<Circular reference to #/components/schemas/FolderTree detected>\"\n    }\n  },\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "007de606-3b5d-400f-936f-1f8e8336067b",
+              "name": "Failed to create upload",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "folder"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileTree\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"children\": {\n      \"value\": \"<Circular reference to #/components/schemas/FolderTree detected>\"\n    }\n  },\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c78c38f-166d-4b32-85c2-90f01097189d",
+          "name": "Uploads - Create a file in a folder provided by the folder upload id",
+          "request": {
+            "name": "Uploads - Create a file in a folder provided by the folder upload id",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "uploads",
+                "folder",
+                ":folderUploadId",
+                "file"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "folderUploadId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"relativeId\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fd884c19-7d98-47a8-bb3d-99ed532d8b57",
+              "name": "File created in folder successfully",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "folder",
+                    ":folderUploadId",
+                    "file"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "folderUploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"relativeId\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "121e42f0-ff68-4c80-9999-3e1586dc718a",
+              "name": "Invalid input",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "folder",
+                    ":folderUploadId",
+                    "file"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "folderUploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"relativeId\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7baa797c-4fcc-4442-a720-455459f6f52c",
+              "name": "Failed to create file in folder",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "folder",
+                    ":folderUploadId",
+                    "file"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "folderUploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"relativeId\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32cf67cd-51fb-49a7-a0c4-8f2ad68d1f16",
+          "name": "Uploads - Upload a chunk of a file",
+          "request": {
+            "name": "Uploads - Upload a chunk of a file",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "uploads",
+                "file",
+                ":uploadId",
+                "chunk"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uploadId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "index",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0b3a4002-fb2b-4b6e-8d41-542539d5ab65",
+              "name": "Chunk uploaded successfully",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "file",
+                    ":uploadId",
+                    "chunk"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "index",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "15fe8884-b001-4e59-8f44-82d5ea30a83c",
+              "name": "Invalid input",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "file",
+                    ":uploadId",
+                    "chunk"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "index",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a4c4ff15-c2c1-4ead-aa37-59796e9538aa",
+              "name": "Failed to upload chunk",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    "file",
+                    ":uploadId",
+                    "chunk"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "index",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "727300db-e01e-41e7-840b-dfaa0c14a9ff",
+          "name": "Uploads - Complete the upload returning the file or folder CID",
+          "request": {
+            "name": "Uploads - Complete the upload returning the file or folder CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "uploads",
+                ":uploadId",
+                "complete"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uploadId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "12ffe4be-d4da-4adf-ad1d-59fbd3e24733",
+              "name": "Upload completed successfully",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    ":uploadId",
+                    "complete"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1768277a-e614-42bb-8838-54d4490654eb",
+              "name": "Failed to complete upload",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "uploads",
+                    ":uploadId",
+                    "complete"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uploadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7896ef74-1e15-4326-af97-453c2096c6d4",
+          "name": "Objects - Get root objects",
+          "request": {
+            "name": "Objects - Get root objects",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                "roots"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07934288-ef44-4bb9-86f0-199452865180",
+              "name": "Successfully retrieved root objects",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"headCid\": \"string\",\n    \"size\": \"string\",\n    \"owners\": [\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      },\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      }\n    ],\n    \"uploadStatus\": {\n      \"uploadedNodes\": 2070,\n      \"totalNodes\": 4708,\n      \"archivedNodes\": 9876,\n      \"minimumBlockDepth\": 7454,\n      \"maximumBlockDepth\": 2101\n    },\n    \"createdAt\": \"string\",\n    \"type\": \"folder\",\n    \"name\": \"string\",\n    \"mimeType\": \"string\"\n  },\n  {\n    \"headCid\": \"string\",\n    \"size\": \"string\",\n    \"owners\": [\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      },\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"admin\"\n      }\n    ],\n    \"uploadStatus\": {\n      \"uploadedNodes\": 2057,\n      \"totalNodes\": 8935,\n      \"archivedNodes\": 8654,\n      \"minimumBlockDepth\": 6222,\n      \"maximumBlockDepth\": 1633\n    },\n    \"createdAt\": \"string\",\n    \"type\": \"folder\",\n    \"name\": \"string\",\n    \"mimeType\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4cdb67f8-5790-489c-b3bf-f2a7cde86b40",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9eace7ab-f028-4c3f-8c45-3150dcf08e78",
+              "name": "Failed to retrieve root objects",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fe4f39f-69df-48a3-8931-a800fe416144",
+          "name": "Objects - Get shared root objects",
+          "request": {
+            "name": "Objects - Get shared root objects",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                "roots",
+                "shared"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0bd1118e-a8e4-4d24-8706-b150ccb047f1",
+              "name": "Successfully retrieved shared root objects",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots",
+                    "shared"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"headCid\": \"string\",\n    \"size\": \"string\",\n    \"owners\": [\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      },\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      }\n    ],\n    \"uploadStatus\": {\n      \"uploadedNodes\": 9294,\n      \"totalNodes\": 3301,\n      \"archivedNodes\": 6608,\n      \"minimumBlockDepth\": 4510,\n      \"maximumBlockDepth\": 9883\n    },\n    \"createdAt\": \"string\",\n    \"type\": \"file\",\n    \"name\": \"string\",\n    \"mimeType\": \"string\"\n  },\n  {\n    \"headCid\": \"string\",\n    \"size\": \"string\",\n    \"owners\": [\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      },\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      }\n    ],\n    \"uploadStatus\": {\n      \"uploadedNodes\": 3581,\n      \"totalNodes\": 7332,\n      \"archivedNodes\": 9002,\n      \"minimumBlockDepth\": 5104,\n      \"maximumBlockDepth\": 5154\n    },\n    \"createdAt\": \"string\",\n    \"type\": \"folder\",\n    \"name\": \"string\",\n    \"mimeType\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c8564860-f82a-4620-a297-3a9dfabd5e1a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots",
+                    "shared"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "98b8d3fc-98cf-4e87-ba26-82eb5de401ee",
+              "name": "Failed to retrieve shared root objects",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots",
+                    "shared"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30ce004b-92ab-446a-b693-f87341ba0f94",
+          "name": "Objects - Get deleted root objects",
+          "request": {
+            "name": "Objects - Get deleted root objects",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                "roots",
+                "deleted"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c5adf83-6156-4109-9d76-400b791fc4f4",
+              "name": "Successfully retrieved deleted root objects",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots",
+                    "deleted"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"headCid\": \"string\",\n    \"size\": \"string\",\n    \"owners\": [\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      },\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      }\n    ],\n    \"uploadStatus\": {\n      \"uploadedNodes\": 9294,\n      \"totalNodes\": 3301,\n      \"archivedNodes\": 6608,\n      \"minimumBlockDepth\": 4510,\n      \"maximumBlockDepth\": 9883\n    },\n    \"createdAt\": \"string\",\n    \"type\": \"file\",\n    \"name\": \"string\",\n    \"mimeType\": \"string\"\n  },\n  {\n    \"headCid\": \"string\",\n    \"size\": \"string\",\n    \"owners\": [\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      },\n      {\n        \"oauthProvider\": \"string\",\n        \"oauthUserId\": \"string\",\n        \"role\": \"viewer\"\n      }\n    ],\n    \"uploadStatus\": {\n      \"uploadedNodes\": 3581,\n      \"totalNodes\": 7332,\n      \"archivedNodes\": 9002,\n      \"minimumBlockDepth\": 5104,\n      \"maximumBlockDepth\": 5154\n    },\n    \"createdAt\": \"string\",\n    \"type\": \"folder\",\n    \"name\": \"string\",\n    \"mimeType\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f2412c5-909e-4db3-a275-83dc0dbf42ca",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots",
+                    "deleted"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "23452b85-ebdc-43b0-8cc4-3614aa11c36c",
+              "name": "Failed to retrieve deleted root objects",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "roots",
+                    "deleted"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46d11739-1800-4f54-9dc6-9720d450e732",
+          "name": "Objects - Search for objects by CID or name",
+          "request": {
+            "name": "Objects - Search for objects by CID or name",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                "search"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cid",
+                  "value": "<string>",
+                  "description": "(Required) The CID or name of the object to search for"
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": "<string>",
+                  "description": "The scope of the search"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "The maximum number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ae0bc60-d75a-420e-9e87-0d9efbfb7614",
+              "name": "Successfully retrieved search results",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "search"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "cid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"cid\": \"string\",\n    \"name\": \"string\"\n  },\n  {\n    \"cid\": \"string\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b47b1989-8358-4326-aa3c-f6b8f4169629",
+              "name": "Missing or invalid cid value",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "search"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "cid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3e7ac1f3-0022-4fe3-a0bf-a27d9a9c8645",
+              "name": "Failed to search metadata",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    "search"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [
+                    {
+                      "key": "cid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5c1ba7e2-43e2-43e2-98ce-2304547da9ac",
+          "name": "Objects - Get summary of an object by CID",
+          "request": {
+            "name": "Objects - Get summary of an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "summary"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f987861-5882-4024-8c22-380e662a6717",
+              "name": "Successfully retrieved object summary",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "summary"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"headCid\": \"string\",\n  \"size\": \"string\",\n  \"owners\": [\n    {\n      \"oauthProvider\": \"string\",\n      \"oauthUserId\": \"string\",\n      \"role\": \"admin\"\n    },\n    {\n      \"oauthProvider\": \"string\",\n      \"oauthUserId\": \"string\",\n      \"role\": \"admin\"\n    }\n  ],\n  \"uploadStatus\": {\n    \"uploadedNodes\": 3960,\n    \"totalNodes\": 5655,\n    \"archivedNodes\": 2666,\n    \"minimumBlockDepth\": 2478,\n    \"maximumBlockDepth\": 7175\n  },\n  \"createdAt\": \"string\",\n  \"type\": \"folder\",\n  \"name\": \"string\",\n  \"mimeType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6169a75a-43b9-477f-b63d-9a4388ae1729",
+              "name": "Metadata not found",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "summary"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ce26f53-fcbd-4f2f-96e1-fc8cfabda655",
+              "name": "Failed to retrieve metadata",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "summary"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11f9d1aa-c1c2-4d19-b6e5-c46910851971",
+          "name": "Objects - Get metadata of an object by CID",
+          "request": {
+            "name": "Objects - Get metadata of an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "metadata"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3deed6e7-0159-4dff-b840-34cb5bf112bc",
+              "name": "Successfully retrieved object metadata",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "metadata"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"file\",\n  \"dataCid\": \"string\",\n  \"name\": \"string\",\n  \"mimeType\": \"string\",\n  \"totalSize\": \"string\",\n  \"totalChunks\": 7869,\n  \"chunks\": [\n    {\n      \"size\": \"string\",\n      \"cid\": \"string\"\n    },\n    {\n      \"size\": \"string\",\n      \"cid\": \"string\"\n    }\n  ],\n  \"uploadOptions\": {\n    \"compression\": {\n      \"algorithm\": \"<string>\",\n      \"level\": 8\n    },\n    \"encryption\": {\n      \"algorithm\": \"<string>\",\n      \"chunkSize\": 1024\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12717d30-3a65-4ddc-97ac-e9a229a16ad2",
+              "name": "Metadata not found",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "metadata"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "853884c2-ba2f-49a7-abdd-ae0e4f1746a3",
+              "name": "Failed to retrieve metadata",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "metadata"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16607344-d3ac-4f1a-84b4-80fc82e2f610",
+          "name": "Objects - Get upload status of an object by CID",
+          "request": {
+            "name": "Objects - Get upload status of an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "status"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bef5a46c-d531-47ac-95a2-803b4bd79d60",
+              "name": "Successfully retrieved upload status",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "status"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uploadedNodes\": 3984,\n  \"totalNodes\": 6191,\n  \"archivedNodes\": 5404,\n  \"minimumBlockDepth\": 1466,\n  \"maximumBlockDepth\": 4451\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d7b8ad79-2eee-4077-bdb3-d4cb21165bc0",
+              "name": "Failed to retrieve upload status",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "status"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f3b53dd-9353-4650-bf81-30fd7f4db6b2",
+          "name": "Objects - Share an object by CID",
+          "request": {
+            "name": "Objects - Share an object by CID",
+            "description": {},
+            "url": {
+              "path": [
+                "objects",
+                ":cid",
+                "share"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"publicId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "35995857-a6d2-440f-93cb-967697d1f54c",
+              "name": "Successfully shared object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "objects",
+                    ":cid",
+                    "share"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "311f44b8-9c3e-4a40-8415-d527c77487df",
+              "name": "Missing `publicId` in request body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "objects",
+                    ":cid",
+                    "share"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2848592b-3f3d-4c01-ba77-08aa9c14771f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "objects",
+                    ":cid",
+                    "share"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81160f2a-b849-449c-8026-8d3a9077132b",
+              "name": "Failed to share object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "objects",
+                    ":cid",
+                    "share"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "662b153a-b7f4-4a4c-9212-3eb8bd4c6486",
+          "name": "Objects - Download an object by CID",
+          "request": {
+            "name": "Objects - Download an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "download"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e454199f-ef0d-4f42-a0ed-b3948c0e4080",
+              "name": "Successfully retrieved object for download",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "download"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "133e36b6-891b-4f46-8863-fdb4d0d7233a",
+              "name": "Metadata not found",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "download"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6d303f42-fc33-47af-a863-4ea6295a0ff9",
+              "name": "Failed to retrieve data",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "download"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7373f2b-e23b-4961-8a2a-7d9057226aa1",
+          "name": "Objects - Delete an object by CID",
+          "request": {
+            "name": "Objects - Delete an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "delete"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4569b421-c34a-42c1-93a2-d7482d258918",
+              "name": "Successfully deleted object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "delete"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "60c9838e-54f9-4b6e-a2d0-7b055d834219",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "delete"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7d2a3b92-5af6-4182-b845-5463570432f3",
+              "name": "Failed to delete object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "delete"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc493e86-c8b9-4c30-ba39-4c8d37c63fc1",
+          "name": "Objects - Restore a deleted object by CID",
+          "request": {
+            "name": "Objects - Restore a deleted object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "restore"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a108ae16-5fc6-4c37-af0d-8dace1a66969",
+              "name": "Successfully restored object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "restore"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e89722fa-d8c5-4808-9fe8-1a1af6ec07ff",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "restore"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b732f387-4f28-4b1b-8d88-2196b6d7e347",
+              "name": "Failed to restore object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "restore"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d1ea5c5-5696-4d63-96df-1deaab272693",
+          "name": "Objects - Publish an object by CID and return the object id",
+          "request": {
+            "name": "Objects - Publish an object by CID and return the object id",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "publish"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74d51743-27c8-41d3-aba2-3dce6b1f7d83",
+              "name": "Successfully published object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "publish"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab75e122-9f67-421b-b48d-1d3511e4dca3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "publish"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "691804c8-10a5-4074-9f03-e534c85a99d7",
+              "name": "Failed to publish object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "publish"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "158f3029-8851-49b0-9342-5535bd4f3065",
+          "name": "Objects - Unpublish an object by CID",
+          "request": {
+            "name": "Objects - Unpublish an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":cid",
+                "unpublish"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "651bade5-0b50-415e-adf4-0c843e7a16d9",
+              "name": "Successfully unpublished object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "unpublish"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ee253156-6489-4253-bae1-1c7d583cbc04",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "unpublish"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a1f1239-2624-4f9f-806a-9e9e5ffa59b5",
+              "name": "Failed to unpublish object",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":cid",
+                    "unpublish"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f2de9e8-ffd0-4caf-9b15-9e8c8ab1daa0",
+          "name": "Objects - Download a published object by id",
+          "request": {
+            "name": "Objects - Download a published object by id",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "objects",
+                ":id",
+                "public"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72a7c34a-3fb8-4df8-872c-b7ee50e8a276",
+              "name": "Successfully retrieved object for download",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":id",
+                    "public"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8373fb3f-b4ff-44ba-b186-cfb11d879917",
+              "name": "Published object not found",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":id",
+                    "public"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ae705a43-050a-40d8-9364-83d92dd20450",
+              "name": "Failed to retrieve data",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "objects",
+                    ":id",
+                    "public"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ed3a1b2-96b5-4702-826e-cc4d3db2804f",
+          "name": "Intents - Get current storage price",
+          "request": {
+            "name": "Intents - Get current storage price",
+            "description": {
+              "content": "Returns the current price per byte (in shannons) and price per GB (in AI3). This endpoint does not require authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "intents",
+                "price"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "262e20a5-535f-489d-827a-b882e762df72",
+              "name": "Current price information",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    "price"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"price\": 614.3162348044417,\n  \"pricePerGB\": 6439.890809615838\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ceee9188-8975-4190-8dab-82e1994e80dd",
+          "name": "Intents - Get smart contract info",
+          "request": {
+            "name": "Intents - Get smart contract info",
+            "description": {
+              "content": "Returns the on-chain contract address, EVM chain ID, and the minimal ABI needed to call `payIntent`. This endpoint does not require authentication. Use this to build the on-chain transaction for step 4 of the integration flow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "intents",
+                "contract"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5b0b15f-360f-4d5d-9be4-153a7dea3ec7",
+              "name": "Contract information",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    "contract"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"chainId\": 1735,\n  \"contractAddress\": \"string\",\n  \"payIntentAbi\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "649c919b-cf16-4a9a-a68c-93ad1bda0eaa",
+          "name": "Intents - Create a purchase intent",
+          "request": {
+            "name": "Intents - Create a purchase intent",
+            "description": {
+              "content": "Creates a PENDING intent with the current price locked in. The intent has a time-limited price-lock window (default 10 minutes) during which the price is guaranteed.\n\n**Authentication:** Currently requires a Google-verified account. You can authenticate via:\n- Google OAuth session\n- API key from a Google-registered account (set `X-Auth-Provider: apikey`)\n\n**Third-party integration pattern:**\n1. Create an Auto Drive account via Google OAuth at https://ai3.storage\n2. Generate an API key from the dashboard\n3. Call `GET /intents/contract` to get the contract address, chain ID, and ABI\n4. Call `GET /intents/price` to get the current price per byte and per GB\n5. Call `POST /intents` with the API key to get an `intentId` with the price locked in\n6. Have the end user call `payIntent(intentId)` on the contract, sending AI3 as native value\n7. Call `POST /intents/:id/watch` with the transaction hash\n8. Poll `GET /intents/:id` until status is `completed`\n9. Upload content via the Auto Drive SDK using the same API key",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "intents"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37ea33de-67aa-474f-858e-613eeeafe7d1",
+              "name": "Intent created successfully",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"userPublicId\": \"string\",\n  \"status\": \"expired\",\n  \"txHash\": \"string\",\n  \"paymentAmount\": \"string\",\n  \"shannonsPerByte\": \"string\",\n  \"expiresAt\": \"1979-07-09T05:46:58.808Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1112ebd4-d2cb-4fa8-9ca3-42016c15f3ff",
+              "name": "Unauthorized — missing or invalid credentials",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e00b507c-e470-405b-a529-b710a5f98ec5",
+              "name": "Google-verified account required — the authenticated account was not registered via Google OAuth",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8c5f4adf-c581-4b81-846c-c5459d6d1182",
+              "name": "Feature not available — the buyCredits feature flag is not active for this user",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f85283e-50a5-4ef6-aef4-896fa50540aa",
+          "name": "Intents - Get intent status",
+          "request": {
+            "name": "Intents - Get intent status",
+            "description": {
+              "content": "Returns the current status of a purchase intent. Use this to poll for completion after calling `/intents/:id/watch`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "intents",
+                ":id"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The intent ID returned by POST /intents"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c4fdcb8-a7b2-4c1b-89be-440246b0365c",
+              "name": "Intent details",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID returned by POST /intents"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"userPublicId\": \"string\",\n  \"status\": \"expired\",\n  \"txHash\": \"string\",\n  \"paymentAmount\": \"string\",\n  \"shannonsPerByte\": \"string\",\n  \"expiresAt\": \"1979-07-09T05:46:58.808Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ba06172-bc92-4fbc-b525-476d2d807c2f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID returned by POST /intents"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "919204e3-3029-404d-ab74-53481b67c5a8",
+              "name": "Forbidden — the intent belongs to a different user",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID returned by POST /intents"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ebcf2c16-959d-4f5b-b47c-f2b805edf9c1",
+              "name": "Intent not found",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID returned by POST /intents"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35237da9-415a-45e4-94a6-bd5d633ffe12",
+              "name": "Intent has expired (price-lock window elapsed)",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID returned by POST /intents"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c7a5482-44ce-4c5c-8459-76fea11a1295",
+          "name": "Intents - Submit transaction hash for watching",
+          "request": {
+            "name": "Intents - Submit transaction hash for watching",
+            "description": {
+              "content": "Attaches a transaction hash to a pending intent and queues on-chain confirmation watching. Call this after the user has submitted the `payIntent` transaction on-chain.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "intents",
+                ":id",
+                "watch"
+              ],
+              "host": [
+                "mainnet",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The intent ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"txHash\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "40f0d3af-a17c-4bd3-ae8e-90128cf14c62",
+              "name": "Transaction hash accepted — watching started",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id",
+                    "watch"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"txHash\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf67f143-b980-44f1-9039-973bcf60df5c",
+              "name": "Missing or invalid txHash",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id",
+                    "watch"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"txHash\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6bc6319b-a959-4bd9-ba3d-e48fc0d9abaf",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id",
+                    "watch"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"txHash\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e3e7e216-93bd-4378-b715-2fead80f95ee",
+              "name": "Forbidden — the intent belongs to a different user",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id",
+                    "watch"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"txHash\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c3fa7179-c796-4df8-9a55-e5c4b7665b25",
+              "name": "Intent has expired",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "intents",
+                    ":id",
+                    "watch"
+                  ],
+                  "host": [
+                    "mainnet",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The intent ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"txHash\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8707fdde-87e5-4a69-bc2e-b8dd2c188950",
+    "name": "Auto Drive APIs Auto Drive API API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Auto-Drive consists of multiple APIs that are used to interact with the Auto-Drive platform.\n\n## Authentication\n\nAll requests to the Auto-Drive APIs require authentication. The following authentication methods are supported:\n\n- API Key\n- JWT Token (rarely used)\n\n## How to use an API key?\n\nThe API key is a string that is used to authenticate requests to the Auto-Drive APIs, you can create one in the [Auto-Drive Dashboard](https://ai3.storage).\n\nTo use an API key, include it in the Authorization header with the Bearer prefix:\n\n```\nAuthorization: Bearer your-api-key\nX-Auth-Provider: apikey\n```\n\nAPI keys should be kept secure and not shared with unauthorized parties.\n\n## Purchasing Storage Credits (Pay with AI3)\n\nThird-party applications can purchase storage credits programmatically using the Intents API. The flow is:\n\n1. **Create an account** — Register at [ai3.storage](https://ai3.storage) via Google OAuth\n2. **Generate an API key** — From the dashboard, create an API key\n3. **Get contract info** — `GET /intents/contract` returns the contract address, chain ID, and ABI\n4. **Check current price** — `GET /intents/price` returns the current price per byte and per GB to display to the user\n5. **Create an intent** — `POST /intents` with your API key returns an `intentId` with the price locked in\n6. **Pay on-chain** — Call `payIntent(intentId)` on the contract, sending AI3 as native value\n7. **Submit tx hash** — `POST /intents/:id/watch` with the transaction hash\n8. **Poll for completion** — `GET /intents/:id` until status is `completed`\n9. **Upload content** — Use the Auto Drive SDK with the same API key (credits are now on the account)\n\n**Note:** A Google-verified account is currently required to purchase credits. API keys inherit the auth provider of the account that created them, so an API key from a Google-registered account satisfies this requirement.\n\n## Auto-Drive Services\n\nAuto-Drive consists of two main services:\n\n### 1. Auto-Drive API\n\nThe Storage Service handles all file operations including uploads, downloads, and object management. It provides APIs for:\n- File uploads (single and multipart)\n- Object metadata management\n- Access control and permissions\n- Account management\n- Credit purchases (Pay with AI3)\n\n### 2. Auto-Drive Download Gateway\n\nThe Auto-Drive Download Gateway is a service that allows you to download files from the Auto-Drive API. It provides APIs for:\n- File downloads\n- Async downloads",
+      "type": "text/plain"
+    }
+  }
+}

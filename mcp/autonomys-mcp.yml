@@ -2,8 +2,8 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: openapi/autonomys-auto-drive-openapi.json
-note: No official Autonomys MCP server found as of this pass. Candidate tool list
-  derived one-per-operation from the Auto Drive OpenAPI; not an endorsed server.
+note: No official Autonomys MCP server found as of this pass. Candidate tool list derived one-per-operation
+  from the Auto Drive OpenAPI; not an endorsed server.
 server:
   name: autonomys-auto-drive
   transport: http
@@ -164,3 +164,9 @@ tools:
   method: POST
   path: /intents/{id}/watch
   source_operation: openapi/autonomys-auto-drive-openapi.json#POST /intents/{id}/watch
+deployment:
+  mode: none
+  verified: derived
+  tools: 31
+  checked: '2026-08-12'
+  source: catalog MCP census

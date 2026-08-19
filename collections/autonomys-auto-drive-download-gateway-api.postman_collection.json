@@ -1,0 +1,771 @@
+{
+  "item": [
+    {
+      "id": "a166792d-c53e-4eeb-99d2-d580fd18e786",
+      "name": "Auto Drive Download Gateway",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1f566ddf-fdbc-46ac-9dbc-6bc4cdea78e6",
+          "name": "Downloads - Create async download for an object by CID",
+          "request": {
+            "name": "Downloads - Create async download for an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "downloads",
+                "async",
+                ":cid"
+              ],
+              "host": [
+                "public",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44dc4249-a7e7-4c44-bb98-433b2b6b5756",
+              "name": "Successfully created async download",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    "async",
+                    ":cid"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"oauthProvider\": \"string\",\n  \"oauthUserId\": \"string\",\n  \"cid\": \"string\",\n  \"status\": \"downloading\",\n  \"errorMessage\": \"string\",\n  \"fileSize\": 6527.972137202995,\n  \"downloadedBytes\": \"string\",\n  \"createdAt\": \"1989-12-31T05:12:05.212Z\",\n  \"updatedAt\": \"1971-09-06T13:50:38.207Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c4e606a-8d19-4dee-925e-065d5ca6abe7",
+          "name": "Downloads - Dismiss an async download",
+          "request": {
+            "name": "Downloads - Dismiss an async download",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "downloads",
+                "async",
+                ":downloadId",
+                "dismiss"
+              ],
+              "host": [
+                "public",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "downloadId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9045c82e-fe23-45e0-b75b-edaa732ab08c",
+              "name": "Successfully dismissed async download",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    "async",
+                    ":downloadId",
+                    "dismiss"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "downloadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"oauthProvider\": \"string\",\n  \"oauthUserId\": \"string\",\n  \"cid\": \"string\",\n  \"status\": \"downloading\",\n  \"errorMessage\": \"string\",\n  \"fileSize\": 6527.972137202995,\n  \"downloadedBytes\": \"string\",\n  \"createdAt\": \"1989-12-31T05:12:05.212Z\",\n  \"updatedAt\": \"1971-09-06T13:50:38.207Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b66d4924-34cd-4f95-8c20-cec4395ecd63",
+          "name": "Downloads - Download an object by CID",
+          "request": {
+            "name": "Downloads - Download an object by CID",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "downloads",
+                ":cid"
+              ],
+              "host": [
+                "public",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "485674cc-bacb-4d65-a655-5508d039ab2d",
+              "name": "Successfully retrieved object for download",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    ":cid"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b8cee8e6-6c3f-4af8-9dd1-6b64182b28be",
+              "name": "Metadata not found",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    ":cid"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7c5d40f-0d70-4878-b692-7638722bf312",
+              "name": "Failed to retrieve data",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    ":cid"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35a47228-a58d-40aa-9a4e-f04f5b3d2b5a",
+          "name": "Downloads - Get async download status",
+          "request": {
+            "name": "Downloads - Get async download status",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "downloads",
+                "async",
+                ":downloadId"
+              ],
+              "host": [
+                "public",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "downloadId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "def965d3-7b3f-4552-b48c-016b98a423b5",
+              "name": "Successfully retrieved async download status",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    "async",
+                    ":downloadId"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "downloadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"oauthProvider\": \"string\",\n  \"oauthUserId\": \"string\",\n  \"cid\": \"string\",\n  \"status\": \"downloading\",\n  \"errorMessage\": \"string\",\n  \"fileSize\": 6527.972137202995,\n  \"downloadedBytes\": \"string\",\n  \"createdAt\": \"1989-12-31T05:12:05.212Z\",\n  \"updatedAt\": \"1971-09-06T13:50:38.207Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9ce816d-714f-48df-92df-fd0e34de2f7a",
+          "name": "Downloads - Get async download status",
+          "request": {
+            "name": "Downloads - Get async download status",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "downloads",
+                "async",
+                ":downloadId",
+                "status"
+              ],
+              "host": [
+                "public",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "downloadId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f218642f-9689-4675-996d-43151d623a42",
+              "name": "Successfully retrieved async download status",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    "async",
+                    ":downloadId",
+                    "status"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "downloadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"not-cached\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4a3b9a4-d272-41fe-a9a8-3d6a808afcc1",
+          "name": "Downloads - Get all async downloads for the current user",
+          "request": {
+            "name": "Downloads - Get all async downloads for the current user",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "api",
+                "downloads",
+                "async",
+                "@me"
+              ],
+              "host": [
+                "public",
+                "auto-drive",
+                "autonomys",
+                "xyz"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea9c9594-c407-4c1b-b590-446964768635",
+              "name": "Successfully retrieved all async downloads",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "api",
+                    "downloads",
+                    "async",
+                    "@me"
+                  ],
+                  "host": [
+                    "public",
+                    "auto-drive",
+                    "autonomys",
+                    "xyz"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"oauthProvider\": \"string\",\n    \"oauthUserId\": \"string\",\n    \"cid\": \"string\",\n    \"status\": \"downloading\",\n    \"errorMessage\": \"string\",\n    \"fileSize\": 6994.940290473343,\n    \"downloadedBytes\": \"string\",\n    \"createdAt\": \"1998-03-28T12:15:45.242Z\",\n    \"updatedAt\": \"2018-07-26T10:13:50.706Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"oauthProvider\": \"string\",\n    \"oauthUserId\": \"string\",\n    \"cid\": \"string\",\n    \"status\": \"pending\",\n    \"errorMessage\": \"string\",\n    \"fileSize\": 1562.6136263535307,\n    \"downloadedBytes\": \"string\",\n    \"createdAt\": \"1954-09-29T13:19:38.634Z\",\n    \"updatedAt\": \"1993-12-19T02:08:01.535Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "043ee065-c913-4fe4-925e-01758a129c38",
+    "name": "Auto Drive APIs Auto Drive API Auto Drive Download Gateway API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Auto-Drive consists of multiple APIs that are used to interact with the Auto-Drive platform.\n\n## Authentication\n\nAll requests to the Auto-Drive APIs require authentication. The following authentication methods are supported:\n\n- API Key\n- JWT Token (rarely used)\n\n## How to use an API key?\n\nThe API key is a string that is used to authenticate requests to the Auto-Drive APIs, you can create one in the [Auto-Drive Dashboard](https://ai3.storage).\n\nTo use an API key, include it in the Authorization header with the Bearer prefix:\n\n```\nAuthorization: Bearer your-api-key\nX-Auth-Provider: apikey\n```\n\nAPI keys should be kept secure and not shared with unauthorized parties.\n\n## Purchasing Storage Credits (Pay with AI3)\n\nThird-party applications can purchase storage credits programmatically using the Intents API. The flow is:\n\n1. **Create an account** — Register at [ai3.storage](https://ai3.storage) via Google OAuth\n2. **Generate an API key** — From the dashboard, create an API key\n3. **Get contract info** — `GET /intents/contract` returns the contract address, chain ID, and ABI\n4. **Check current price** — `GET /intents/price` returns the current price per byte and per GB to display to the user\n5. **Create an intent** — `POST /intents` with your API key returns an `intentId` with the price locked in\n6. **Pay on-chain** — Call `payIntent(intentId)` on the contract, sending AI3 as native value\n7. **Submit tx hash** — `POST /intents/:id/watch` with the transaction hash\n8. **Poll for completion** — `GET /intents/:id` until status is `completed`\n9. **Upload content** — Use the Auto Drive SDK with the same API key (credits are now on the account)\n\n**Note:** A Google-verified account is currently required to purchase credits. API keys inherit the auth provider of the account that created them, so an API key from a Google-registered account satisfies this requirement.\n\n## Auto-Drive Services\n\nAuto-Drive consists of two main services:\n\n### 1. Auto-Drive API\n\nThe Storage Service handles all file operations including uploads, downloads, and object management. It provides APIs for:\n- File uploads (single and multipart)\n- Object metadata management\n- Access control and permissions\n- Account management\n- Credit purchases (Pay with AI3)\n\n### 2. Auto-Drive Download Gateway\n\nThe Auto-Drive Download Gateway is a service that allows you to download files from the Auto-Drive API. It provides APIs for:\n- File downloads\n- Async downloads",
+      "type": "text/plain"
+    }
+  }
+}

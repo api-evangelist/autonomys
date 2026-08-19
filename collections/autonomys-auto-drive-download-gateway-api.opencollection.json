@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Auto Drive APIs Auto Drive API Auto Drive Download Gateway API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auto Drive Download Gateway",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Downloads - Create async download for an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/downloads/async/:cid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Downloads - Create async download for an object by CID"
+        },
+        {
+          "info": {
+            "name": "Downloads - Dismiss an async download",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/downloads/async/:downloadId/dismiss",
+            "params": [
+              {
+                "name": "downloadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Downloads - Dismiss an async download"
+        },
+        {
+          "info": {
+            "name": "Downloads - Download an object by CID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/downloads/:cid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Downloads - Download an object by CID"
+        },
+        {
+          "info": {
+            "name": "Downloads - Get async download status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/downloads/async/:downloadId",
+            "params": [
+              {
+                "name": "downloadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Downloads - Get async download status"
+        },
+        {
+          "info": {
+            "name": "Downloads - Get async download status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/downloads/async/:downloadId/status",
+            "params": [
+              {
+                "name": "downloadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Downloads - Get async download status"
+        },
+        {
+          "info": {
+            "name": "Downloads - Get all async downloads for the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/downloads/async/@me"
+          },
+          "docs": "Downloads - Get all async downloads for the current user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
