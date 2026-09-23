@@ -1,100 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Auto Drive APIs Auto Drive API API
+  title: Auto Drive API
   version: 1.1.0
-  description: 'Auto-Drive consists of multiple APIs that are used to interact with the Auto-Drive platform.
-
-
-    ## Authentication
-
-
-    All requests to the Auto-Drive APIs require authentication. The following authentication methods are supported:
-
-
-    - API Key
-
-    - JWT Token (rarely used)
-
-
-    ## How to use an API key?
-
-
-    The API key is a string that is used to authenticate requests to the Auto-Drive APIs, you can create one in the [Auto-Drive Dashboard](https://ai3.storage).
-
-
-    To use an API key, include it in the Authorization header with the Bearer prefix:
-
-
-    ```
-
-    Authorization: Bearer your-api-key
-
-    X-Auth-Provider: apikey
-
-    ```
-
-
-    API keys should be kept secure and not shared with unauthorized parties.
-
-
-    ## Purchasing Storage Credits (Pay with AI3)
-
-
-    Third-party applications can purchase storage credits programmatically using the Intents API. The flow is:
-
-
-    1. **Create an account** — Register at [ai3.storage](https://ai3.storage) via Google OAuth
-
-    2. **Generate an API key** — From the dashboard, create an API key
-
-    3. **Get contract info** — `GET /intents/contract` returns the contract address, chain ID, and ABI
-
-    4. **Check current price** — `GET /intents/price` returns the current price per byte and per GB to display to the user
-
-    5. **Create an intent** — `POST /intents` with your API key returns an `intentId` with the price locked in
-
-    6. **Pay on-chain** — Call `payIntent(intentId)` on the contract, sending AI3 as native value
-
-    7. **Submit tx hash** — `POST /intents/:id/watch` with the transaction hash
-
-    8. **Poll for completion** — `GET /intents/:id` until status is `completed`
-
-    9. **Upload content** — Use the Auto Drive SDK with the same API key (credits are now on the account)
-
-
-    **Note:** A Google-verified account is currently required to purchase credits. API keys inherit the auth provider of the account that created them, so an API key from a Google-registered account satisfies this requirement.
-
-
-    ## Auto-Drive Services
-
-
-    Auto-Drive consists of two main services:
-
-
-    ### 1. Auto-Drive API
-
-
-    The Storage Service handles all file operations including uploads, downloads, and object management. It provides APIs for:
-
-    - File uploads (single and multipart)
-
-    - Object metadata management
-
-    - Access control and permissions
-
-    - Account management
-
-    - Credit purchases (Pay with AI3)
-
-
-    ### 2. Auto-Drive Download Gateway
-
-
-    The Auto-Drive Download Gateway is a service that allows you to download files from the Auto-Drive API. It provides APIs for:
-
-    - File downloads
-
-    - Async downloads'
+  description: Auto-Drive consists of multiple APIs that are used to interact with the Auto-Drive platform.
 security:
 - apiKey: []
   provider: []
@@ -131,6 +39,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to get user info
+      operationId: getAccounts@me
+      x-operation-id-source: derived
   /uploads/file:
     post:
       summary: Uploads - Upload a file
@@ -167,6 +77,8 @@ paths:
           description: Invalid input
         '500':
           description: Failed to create upload
+      operationId: postUploadsFile
+      x-operation-id-source: derived
   /uploads/folder:
     post:
       summary: Uploads - Create a new folder upload
@@ -201,6 +113,8 @@ paths:
           description: Invalid input
         '500':
           description: Failed to create upload
+      operationId: postUploadsFolder
+      x-operation-id-source: derived
   /uploads/folder/{folderUploadId}/file:
     post:
       summary: Uploads - Create a file in a folder provided by the folder upload id
@@ -242,6 +156,8 @@ paths:
           description: Invalid input
         '500':
           description: Failed to create file in folder
+      operationId: postUploadsFolderByFolderUploadIdFile
+      x-operation-id-source: derived
   /uploads/file/{uploadId}/chunk:
     post:
       summary: Uploads - Upload a chunk of a file
@@ -277,6 +193,8 @@ paths:
           description: Invalid input
         '500':
           description: Failed to upload chunk
+      operationId: postUploadsFileByUploadIdChunk
+      x-operation-id-source: derived
   /uploads/{uploadId}/complete:
     post:
       summary: Uploads - Complete the upload returning the file or folder CID
@@ -303,6 +221,8 @@ paths:
                     type: string
         '500':
           description: Failed to complete upload
+      operationId: postUploadsByUploadIdComplete
+      x-operation-id-source: derived
   /objects/roots:
     get:
       summary: Objects - Get root objects
@@ -343,6 +263,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to retrieve root objects
+      operationId: getObjectsRoots
+      x-operation-id-source: derived
   /objects/roots/shared:
     get:
       summary: Objects - Get shared root objects
@@ -375,6 +297,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to retrieve shared root objects
+      operationId: getObjectsRootsShared
+      x-operation-id-source: derived
   /objects/roots/deleted:
     get:
       summary: Objects - Get deleted root objects
@@ -407,6 +331,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to retrieve deleted root objects
+      operationId: getObjectsRootsDeleted
+      x-operation-id-source: derived
   /objects/search:
     get:
       summary: Objects - Search for objects by CID or name
@@ -450,6 +376,8 @@ paths:
           description: Missing or invalid cid value
         '500':
           description: Failed to search metadata
+      operationId: getObjectsSearch
+      x-operation-id-source: derived
   /objects/{cid}/summary:
     get:
       summary: Objects - Get summary of an object by CID
@@ -475,6 +403,8 @@ paths:
           description: Metadata not found
         '500':
           description: Failed to retrieve metadata
+      operationId: getObjectsByCidSummary
+      x-operation-id-source: derived
   /objects/{cid}/metadata:
     get:
       summary: Objects - Get metadata of an object by CID
@@ -500,6 +430,8 @@ paths:
           description: Metadata not found
         '500':
           description: Failed to retrieve metadata
+      operationId: getObjectsByCidMetadata
+      x-operation-id-source: derived
   /objects/{cid}/status:
     get:
       summary: Objects - Get upload status of an object by CID
@@ -523,6 +455,8 @@ paths:
                 $ref: '#/components/schemas/UploadStatus'
         '500':
           description: Failed to retrieve upload status
+      operationId: getObjectsByCidStatus
+      x-operation-id-source: derived
   /objects/{cid}/share:
     post:
       summary: Objects - Share an object by CID
@@ -553,6 +487,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to share object
+      operationId: postObjectsByCidShare
+      x-operation-id-source: derived
   /objects/{cid}/download:
     get:
       deprecated: true
@@ -580,6 +516,8 @@ paths:
           description: Metadata not found
         '500':
           description: Failed to retrieve data
+      operationId: getObjectsByCidDownload
+      x-operation-id-source: derived
   /objects/{cid}/delete:
     post:
       summary: Objects - Delete an object by CID
@@ -601,6 +539,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to delete object
+      operationId: postObjectsByCidDelete
+      x-operation-id-source: derived
   /objects/{cid}/restore:
     post:
       summary: Objects - Restore a deleted object by CID
@@ -622,6 +562,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to restore object
+      operationId: postObjectsByCidRestore
+      x-operation-id-source: derived
   /objects/{cid}/publish:
     post:
       summary: Objects - Publish an object by CID and return the object id
@@ -650,6 +592,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to publish object
+      operationId: postObjectsByCidPublish
+      x-operation-id-source: derived
   /objects/{cid}/unpublish:
     post:
       summary: Objects - Unpublish an object by CID
@@ -671,6 +615,8 @@ paths:
           description: Unauthorized
         '500':
           description: Failed to unpublish object
+      operationId: postObjectsByCidUnpublish
+      x-operation-id-source: derived
   /objects/{id}/public:
     get:
       summary: Objects - Download a published object by id
@@ -697,6 +643,8 @@ paths:
           description: Published object not found
         '500':
           description: Failed to retrieve data
+      operationId: getObjectsByIdPublic
+      x-operation-id-source: derived
   /intents/price:
     get:
       summary: Intents - Get current storage price
@@ -721,6 +669,8 @@ paths:
                   pricePerGB:
                     type: number
                     description: Price per GB in AI3 tokens
+      operationId: getIntentsPrice
+      x-operation-id-source: derived
   /intents/contract:
     get:
       summary: Intents - Get smart contract info
@@ -738,6 +688,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ContractInfo'
+      operationId: getIntentsContract
+      x-operation-id-source: derived
   /intents:
     post:
       summary: Intents - Create a purchase intent
@@ -788,6 +740,8 @@ paths:
           description: Google-verified account required — the authenticated account was not registered via Google OAuth
         '404':
           description: Feature not available — the buyCredits feature flag is not active for this user
+      operationId: postIntents
+      x-operation-id-source: derived
   /intents/{id}:
     get:
       summary: Intents - Get intent status
@@ -819,6 +773,8 @@ paths:
           description: Intent not found
         '410':
           description: Intent has expired (price-lock window elapsed)
+      operationId: getIntentsById
+      x-operation-id-source: derived
   /intents/{id}/watch:
     post:
       summary: Intents - Submit transaction hash for watching
@@ -858,23 +814,10 @@ paths:
           description: Forbidden — the intent belongs to a different user
         '410':
           description: Intent has expired
+      operationId: postIntentsByIdWatch
+      x-operation-id-source: derived
 components:
   schemas:
-    EncryptionOptions:
-      type: object
-      properties:
-        algorithm:
-          type: string
-          enum:
-          - AES_256_GCM
-        chunkSize:
-          type: integer
-          default: 1024
-    OffchainMetadata:
-      type: object
-      oneOf:
-      - $ref: '#/components/schemas/OffchainFileMetadata'
-      - $ref: '#/components/schemas/OffchainFolderMetadata'
     OffchainFileMetadata:
       type: object
       properties:
@@ -885,11 +828,13 @@ components:
         dataCid:
           type: string
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         mimeType:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         totalSize:
           type: string
         totalChunks:
@@ -900,70 +845,58 @@ components:
             $ref: '#/components/schemas/ChunkInfo'
         uploadOptions:
           $ref: '#/components/schemas/UploadOptions'
-    UploadStatus:
+    ObjectSummary:
       type: object
       properties:
-        uploadedNodes:
-          type: integer
-          nullable: true
-        totalNodes:
-          type: integer
-          nullable: true
-        archivedNodes:
-          type: integer
-          nullable: true
-        minimumBlockDepth:
-          type: integer
-          nullable: true
-        maximumBlockDepth:
-          type: integer
-          nullable: true
-    UploadOptions:
-      type: object
-      properties:
-        compression:
-          $ref: '#/components/schemas/CompressionOptions'
-        encryption:
-          $ref: '#/components/schemas/EncryptionOptions'
-    ChunkInfo:
-      type: object
-      properties:
+        headCid:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
         size:
           type: string
-        cid:
+        owners:
+          type: array
+          items:
+            type: object
+            properties:
+              oauthProvider:
+                type: string
+              oauthUserId:
+                type: string
+              role:
+                type: string
+                enum:
+                - admin
+                - viewer
+        uploadStatus:
+          $ref: '#/components/schemas/UploadStatus'
+        createdAt:
           type: string
-    FolderTree:
-      oneOf:
-      - $ref: '#/components/schemas/FolderTreeFolder'
-      - $ref: '#/components/schemas/FolderTreeFile'
-    AccountInfo:
-      type: object
-      properties:
-        id:
-          type: string
-        organizationId:
-          type: string
-        uploadLimit:
-          type: number
-        downloadLimit:
-          type: number
-        module:
+          format: iso8601
+        type:
           type: string
           enum:
-          - monthly
-          - one_off
-        pendingUploadCredits:
-          type: number
-        pendingDownloadCredits:
-          type: number
+          - file
+          - folder
+        mimeType:
+          type:
+          - string
+          - 'null'
+        children:
+          type:
+          - array
+          - 'null'
+          items:
+            type: object
       required:
-      - id
-      - organizationId
-      - uploadLimit
-      - downloadLimit
-      - model
-      - pendingUploadCredits
-      - pendingDownloadCredits
+      - headCid
+      - size
+      - owners
+      - uploadStatus
+      - createdAt
+      - type
     ContractInfo:
       type: object
       required:
@@ -982,80 +915,6 @@ components:
           description: Minimal ABI for the payIntent function — pass directly to viem/ethers/web3.js
           items:
             type: object
-    CompressionOptions:
-      type: object
-      properties:
-        algorithm:
-          type: string
-          enum:
-          - ZLIB
-        level:
-          type: integer
-          default: 8
-    FolderTreeFolder:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - folder
-          - file
-        children:
-          $ref: '#/components/schemas/FolderTree'
-    FolderTreeFile:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - file
-        id:
-          type: string
-    ChildrenMetadata:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - file
-          - folder
-        cid:
-          type: string
-        name:
-          type: string
-          nullable: true
-        totalSize:
-          type: string
-      required:
-      - type
-      - cid
-      - totalSize
-    OffchainFolderMetadata:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - folder
-        dataCid:
-          type: string
-        name:
-          type: string
-          nullable: true
-        totalSize:
-          type: string
-        totalFiles:
-          type: integer
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChildrenMetadata'
-        uploadOptions:
-          $ref: '#/components/schemas/UploadOptions'
     Intent:
       type: object
       properties:
@@ -1088,55 +947,146 @@ components:
           type: string
           format: date-time
           description: Price-lock expiry timestamp
-    ObjectSummary:
+    FolderTree:
+      oneOf:
+      - $ref: '#/components/schemas/FolderTreeFolder'
+      - $ref: '#/components/schemas/FolderTreeFile'
+    FolderTreeFile:
       type: object
       properties:
-        headCid:
-          type: string
         name:
           type: string
-          nullable: true
-        size:
-          type: string
-        owners:
-          type: array
-          items:
-            type: object
-            properties:
-              oauthProvider:
-                type: string
-              oauthUserId:
-                type: string
-              role:
-                type: string
-                enum:
-                - admin
-                - viewer
-        uploadStatus:
-          $ref: '#/components/schemas/UploadStatus'
-        createdAt:
-          type: string
-          format: iso8601
         type:
           type: string
           enum:
           - file
-          - folder
-        mimeType:
+        id:
           type: string
-          nullable: true
+    ChunkInfo:
+      type: object
+      properties:
+        size:
+          type: string
+        cid:
+          type: string
+    OffchainMetadata:
+      type: object
+      oneOf:
+      - $ref: '#/components/schemas/OffchainFileMetadata'
+      - $ref: '#/components/schemas/OffchainFolderMetadata'
+    OffchainFolderMetadata:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - folder
+        dataCid:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+        totalSize:
+          type: string
+        totalFiles:
+          type: integer
         children:
           type: array
           items:
-            type: object
-          nullable: true
+            $ref: '#/components/schemas/ChildrenMetadata'
+        uploadOptions:
+          $ref: '#/components/schemas/UploadOptions'
+    UploadOptions:
+      type: object
+      properties:
+        compression:
+          $ref: '#/components/schemas/CompressionOptions'
+        encryption:
+          $ref: '#/components/schemas/EncryptionOptions'
+    CompressionOptions:
+      type: object
+      properties:
+        algorithm:
+          type: string
+          enum:
+          - ZLIB
+        level:
+          type: integer
+          default: 8
+    UploadStatus:
+      type: object
+      properties:
+        uploadedNodes:
+          type:
+          - integer
+          - 'null'
+        totalNodes:
+          type:
+          - integer
+          - 'null'
+        archivedNodes:
+          type:
+          - integer
+          - 'null'
+        minimumBlockDepth:
+          type:
+          - integer
+          - 'null'
+        maximumBlockDepth:
+          type:
+          - integer
+          - 'null'
+    FolderTreeFolder:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - folder
+          - file
+        children:
+          $ref: '#/components/schemas/FolderTree'
+    EncryptionOptions:
+      type: object
+      properties:
+        algorithm:
+          type: string
+          enum:
+          - AES_256_GCM
+        chunkSize:
+          type: integer
+          default: 1024
+    AccountInfo:
+      type: object
+      properties:
+        id:
+          type: string
+        organizationId:
+          type: string
+        uploadLimit:
+          type: number
+        downloadLimit:
+          type: number
+        module:
+          type: string
+          enum:
+          - monthly
+          - one_off
+        pendingUploadCredits:
+          type: number
+        pendingDownloadCredits:
+          type: number
       required:
-      - headCid
-      - size
-      - owners
-      - uploadStatus
-      - createdAt
-      - type
+      - id
+      - organizationId
+      - uploadLimit
+      - downloadLimit
+      - model
+      - pendingUploadCredits
+      - pendingDownloadCredits
     ObjectSearchResult:
       type: object
       properties:
@@ -1147,6 +1097,26 @@ components:
       required:
       - cid
       - name
+    ChildrenMetadata:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - file
+          - folder
+        cid:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+        totalSize:
+          type: string
+      required:
+      - type
+      - cid
+      - totalSize
   securitySchemes:
     apiKey:
       type: apiKey
