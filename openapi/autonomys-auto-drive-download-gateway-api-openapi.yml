@@ -148,6 +148,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    AsyncDownloadStatus:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - cached
+          - not-cached
     AsyncDownload:
       type: object
       properties:
@@ -185,14 +193,6 @@ components:
         updatedAt:
           type: string
           format: date-time
-    AsyncDownloadStatus:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - cached
-          - not-cached
   securitySchemes:
     apiKey:
       type: apiKey
