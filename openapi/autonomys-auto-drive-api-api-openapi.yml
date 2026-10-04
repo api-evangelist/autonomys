@@ -818,25 +818,53 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    UploadOptions:
+    FolderTree:
+      oneOf:
+      - $ref: '#/components/schemas/FolderTreeFolder'
+      - $ref: '#/components/schemas/FolderTreeFile'
+    EncryptionOptions:
       type: object
       properties:
-        compression:
-          $ref: '#/components/schemas/CompressionOptions'
-        encryption:
-          $ref: '#/components/schemas/EncryptionOptions'
-    ChunkInfo:
-      type: object
-      properties:
-        size:
+        algorithm:
           type: string
+          enum:
+          - AES_256_GCM
+        chunkSize:
+          type: integer
+          default: 1024
+    FolderTreeFile:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - file
+        id:
+          type: string
+    ObjectSearchResult:
+      type: object
+      properties:
         cid:
           type: string
-    OffchainMetadata:
+        name:
+          type: string
+      required:
+      - cid
+      - name
+    FolderTreeFolder:
       type: object
-      oneOf:
-      - $ref: '#/components/schemas/OffchainFileMetadata'
-      - $ref: '#/components/schemas/OffchainFolderMetadata'
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - folder
+          - file
+        children:
+          $ref: '#/components/schemas/FolderTree'
     CompressionOptions:
       type: object
       properties:
@@ -847,33 +875,26 @@ components:
         level:
           type: integer
           default: 8
-    OffchainFileMetadata:
+    ChildrenMetadata:
       type: object
       properties:
         type:
           type: string
           enum:
           - file
-        dataCid:
+          - folder
+        cid:
           type: string
         name:
           type:
           - string
           - 'null'
-        mimeType:
-          type:
-          - string
-          - 'null'
         totalSize:
           type: string
-        totalChunks:
-          type: integer
-        chunks:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChunkInfo'
-        uploadOptions:
-          $ref: '#/components/schemas/UploadOptions'
+      required:
+      - type
+      - cid
+      - totalSize
     ObjectSummary:
       type: object
       properties:
@@ -926,55 +947,6 @@ components:
       - uploadStatus
       - createdAt
       - type
-    ObjectSearchResult:
-      type: object
-      properties:
-        cid:
-          type: string
-        name:
-          type: string
-      required:
-      - cid
-      - name
-    OffchainFolderMetadata:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - folder
-        dataCid:
-          type: string
-        name:
-          type:
-          - string
-          - 'null'
-        totalSize:
-          type: string
-        totalFiles:
-          type: integer
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChildrenMetadata'
-        uploadOptions:
-          $ref: '#/components/schemas/UploadOptions'
-    FolderTreeFolder:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - folder
-          - file
-        children:
-          $ref: '#/components/schemas/FolderTree'
-    FolderTree:
-      oneOf:
-      - $ref: '#/components/schemas/FolderTreeFolder'
-      - $ref: '#/components/schemas/FolderTreeFile'
     AccountInfo:
       type: object
       properties:
@@ -1003,17 +975,40 @@ components:
       - model
       - pendingUploadCredits
       - pendingDownloadCredits
-    FolderTreeFile:
+    OffchainFileMetadata:
       type: object
       properties:
-        name:
-          type: string
         type:
           type: string
           enum:
           - file
-        id:
+        dataCid:
           type: string
+        name:
+          type:
+          - string
+          - 'null'
+        mimeType:
+          type:
+          - string
+          - 'null'
+        totalSize:
+          type: string
+        totalChunks:
+          type: integer
+        chunks:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChunkInfo'
+        uploadOptions:
+          $ref: '#/components/schemas/UploadOptions'
+    UploadOptions:
+      type: object
+      properties:
+        compression:
+          $ref: '#/components/schemas/CompressionOptions'
+        encryption:
+          $ref: '#/components/schemas/EncryptionOptions'
     ContractInfo:
       type: object
       required:
@@ -1032,6 +1027,64 @@ components:
           description: Minimal ABI for the payIntent function — pass directly to viem/ethers/web3.js
           items:
             type: object
+    OffchainMetadata:
+      type: object
+      oneOf:
+      - $ref: '#/components/schemas/OffchainFileMetadata'
+      - $ref: '#/components/schemas/OffchainFolderMetadata'
+    OffchainFolderMetadata:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - folder
+        dataCid:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+        totalSize:
+          type: string
+        totalFiles:
+          type: integer
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChildrenMetadata'
+        uploadOptions:
+          $ref: '#/components/schemas/UploadOptions'
+    ChunkInfo:
+      type: object
+      properties:
+        size:
+          type: string
+        cid:
+          type: string
+    UploadStatus:
+      type: object
+      properties:
+        uploadedNodes:
+          type:
+          - integer
+          - 'null'
+        totalNodes:
+          type:
+          - integer
+          - 'null'
+        archivedNodes:
+          type:
+          - integer
+          - 'null'
+        minimumBlockDepth:
+          type:
+          - integer
+          - 'null'
+        maximumBlockDepth:
+          type:
+          - integer
+          - 'null'
     Intent:
       type: object
       properties:
@@ -1064,59 +1117,6 @@ components:
           type: string
           format: date-time
           description: Price-lock expiry timestamp
-    UploadStatus:
-      type: object
-      properties:
-        uploadedNodes:
-          type:
-          - integer
-          - 'null'
-        totalNodes:
-          type:
-          - integer
-          - 'null'
-        archivedNodes:
-          type:
-          - integer
-          - 'null'
-        minimumBlockDepth:
-          type:
-          - integer
-          - 'null'
-        maximumBlockDepth:
-          type:
-          - integer
-          - 'null'
-    EncryptionOptions:
-      type: object
-      properties:
-        algorithm:
-          type: string
-          enum:
-          - AES_256_GCM
-        chunkSize:
-          type: integer
-          default: 1024
-    ChildrenMetadata:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - file
-          - folder
-        cid:
-          type: string
-        name:
-          type:
-          - string
-          - 'null'
-        totalSize:
-          type: string
-      required:
-      - type
-      - cid
-      - totalSize
   securitySchemes:
     apiKey:
       type: apiKey
