@@ -818,41 +818,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    FolderTree:
-      oneOf:
-      - $ref: '#/components/schemas/FolderTreeFolder'
-      - $ref: '#/components/schemas/FolderTreeFile'
-    EncryptionOptions:
-      type: object
-      properties:
-        algorithm:
-          type: string
-          enum:
-          - AES_256_GCM
-        chunkSize:
-          type: integer
-          default: 1024
-    FolderTreeFile:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - file
-        id:
-          type: string
-    ObjectSearchResult:
-      type: object
-      properties:
-        cid:
-          type: string
-        name:
-          type: string
-      required:
-      - cid
-      - name
     FolderTreeFolder:
       type: object
       properties:
@@ -865,16 +830,24 @@ components:
           - file
         children:
           $ref: '#/components/schemas/FolderTree'
-    CompressionOptions:
+    FolderTreeFile:
       type: object
       properties:
-        algorithm:
+        name:
+          type: string
+        type:
           type: string
           enum:
-          - ZLIB
-        level:
-          type: integer
-          default: 8
+          - file
+        id:
+          type: string
+    ChunkInfo:
+      type: object
+      properties:
+        size:
+          type: string
+        cid:
+          type: string
     ChildrenMetadata:
       type: object
       properties:
@@ -895,6 +868,72 @@ components:
       - type
       - cid
       - totalSize
+    OffchainMetadata:
+      type: object
+      oneOf:
+      - $ref: '#/components/schemas/OffchainFileMetadata'
+      - $ref: '#/components/schemas/OffchainFolderMetadata'
+    UploadOptions:
+      type: object
+      properties:
+        compression:
+          $ref: '#/components/schemas/CompressionOptions'
+        encryption:
+          $ref: '#/components/schemas/EncryptionOptions'
+    OffchainFileMetadata:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - file
+        dataCid:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+        mimeType:
+          type:
+          - string
+          - 'null'
+        totalSize:
+          type: string
+        totalChunks:
+          type: integer
+        chunks:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChunkInfo'
+        uploadOptions:
+          $ref: '#/components/schemas/UploadOptions'
+    FolderTree:
+      oneOf:
+      - $ref: '#/components/schemas/FolderTreeFolder'
+      - $ref: '#/components/schemas/FolderTreeFile'
+    OffchainFolderMetadata:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - folder
+        dataCid:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+        totalSize:
+          type: string
+        totalFiles:
+          type: integer
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChildrenMetadata'
+        uploadOptions:
+          $ref: '#/components/schemas/UploadOptions'
     ObjectSummary:
       type: object
       properties:
@@ -947,6 +986,77 @@ components:
       - uploadStatus
       - createdAt
       - type
+    ContractInfo:
+      type: object
+      required:
+      - chainId
+      - contractAddress
+      - payIntentAbi
+      properties:
+        chainId:
+          type: integer
+          description: EVM chain ID where the contract is deployed (e.g. 870 for Auto-EVM Mainnet)
+        contractAddress:
+          type: string
+          description: Address of the AutoDriveCreditsReceiver contract (checksummed)
+        payIntentAbi:
+          type: array
+          description: Minimal ABI for the payIntent function — pass directly to viem/ethers/web3.js
+          items:
+            type: object
+    CompressionOptions:
+      type: object
+      properties:
+        algorithm:
+          type: string
+          enum:
+          - ZLIB
+        level:
+          type: integer
+          default: 8
+    ObjectSearchResult:
+      type: object
+      properties:
+        cid:
+          type: string
+        name:
+          type: string
+      required:
+      - cid
+      - name
+    EncryptionOptions:
+      type: object
+      properties:
+        algorithm:
+          type: string
+          enum:
+          - AES_256_GCM
+        chunkSize:
+          type: integer
+          default: 1024
+    UploadStatus:
+      type: object
+      properties:
+        uploadedNodes:
+          type:
+          - integer
+          - 'null'
+        totalNodes:
+          type:
+          - integer
+          - 'null'
+        archivedNodes:
+          type:
+          - integer
+          - 'null'
+        minimumBlockDepth:
+          type:
+          - integer
+          - 'null'
+        maximumBlockDepth:
+          type:
+          - integer
+          - 'null'
     AccountInfo:
       type: object
       properties:
@@ -975,116 +1085,6 @@ components:
       - model
       - pendingUploadCredits
       - pendingDownloadCredits
-    OffchainFileMetadata:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - file
-        dataCid:
-          type: string
-        name:
-          type:
-          - string
-          - 'null'
-        mimeType:
-          type:
-          - string
-          - 'null'
-        totalSize:
-          type: string
-        totalChunks:
-          type: integer
-        chunks:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChunkInfo'
-        uploadOptions:
-          $ref: '#/components/schemas/UploadOptions'
-    UploadOptions:
-      type: object
-      properties:
-        compression:
-          $ref: '#/components/schemas/CompressionOptions'
-        encryption:
-          $ref: '#/components/schemas/EncryptionOptions'
-    ContractInfo:
-      type: object
-      required:
-      - chainId
-      - contractAddress
-      - payIntentAbi
-      properties:
-        chainId:
-          type: integer
-          description: EVM chain ID where the contract is deployed (e.g. 870 for Auto-EVM Mainnet)
-        contractAddress:
-          type: string
-          description: Address of the AutoDriveCreditsReceiver contract (checksummed)
-        payIntentAbi:
-          type: array
-          description: Minimal ABI for the payIntent function — pass directly to viem/ethers/web3.js
-          items:
-            type: object
-    OffchainMetadata:
-      type: object
-      oneOf:
-      - $ref: '#/components/schemas/OffchainFileMetadata'
-      - $ref: '#/components/schemas/OffchainFolderMetadata'
-    OffchainFolderMetadata:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - folder
-        dataCid:
-          type: string
-        name:
-          type:
-          - string
-          - 'null'
-        totalSize:
-          type: string
-        totalFiles:
-          type: integer
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChildrenMetadata'
-        uploadOptions:
-          $ref: '#/components/schemas/UploadOptions'
-    ChunkInfo:
-      type: object
-      properties:
-        size:
-          type: string
-        cid:
-          type: string
-    UploadStatus:
-      type: object
-      properties:
-        uploadedNodes:
-          type:
-          - integer
-          - 'null'
-        totalNodes:
-          type:
-          - integer
-          - 'null'
-        archivedNodes:
-          type:
-          - integer
-          - 'null'
-        minimumBlockDepth:
-          type:
-          - integer
-          - 'null'
-        maximumBlockDepth:
-          type:
-          - integer
-          - 'null'
     Intent:
       type: object
       properties:
